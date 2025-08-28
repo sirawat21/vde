@@ -6,10 +6,9 @@ function vde-ls() {
 }
 
 function vde() {
-    docker run --rm -it \
-    $1 \
-    --name "$1-container" \
-    -v "$(pwd)":/app \
-    node-cli \
-    "${@:2}"
+  docker run --rm -it \
+  --name "$1-container" \
+  -v "$(pwd)":/app \
+  "$1" \
+  "${@:2}"
 }
